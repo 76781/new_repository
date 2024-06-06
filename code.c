@@ -1,6 +1,14 @@
 #include <stdio.h>
 
 int main(){
-	printf("hello word\n");
+	printf("wow\n");
+	printf("wow\n");
+	printf("wow\n");
+	printf("wow\n");
+	printf("wow\n");
+	printf("wow\n");
+	printf("wow\n");
+	printf("wow\n");
+
 	return 0;
 }
