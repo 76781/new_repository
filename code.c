@@ -1,14 +1,8 @@
 #include <stdio.h>
 
 int main(){
-	printf("wow\n");
-	printf("wow\n");
-	printf("wow\n");
-	printf("wow\n");
-	printf("wow\n");
-	printf("wow\n");
-	printf("wow\n");
-	printf("wow\n");
+	printf("加纳\n");
+	
 
 	return 0;
 }
