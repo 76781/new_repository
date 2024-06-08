@@ -25,12 +25,38 @@
 本地的是新版，发布的是旧的版本
 ## 设备认证
 ### 1.如何让网站的账户也设备进行绑定，后续完成代码的管理以及上传下载
-git init    //创建本地仓库<br>
-git config --list   //查看git的配置文件<br>
-git config --global user.email "邮箱"<br>
-git config --global user.name "用户名"<br>
-ssh-keygen -t rsa -C "注册邮箱"  //创建本地密文<br>
-去对应的目录找密文文件
-rsa.pub 复制密文，粘贴 setting->SSH key and GPG-> new ssh key ->粘贴<br>
-ssh -T git@github.com  //测试关联是否成功<br>
+1. git init    //创建本地仓库<br>
+2. git config --list   //查看git的配置文件<br>
+3. git config --global user.email "邮箱"<br>
+4. git config --global user.name "用户名"<br>
+5. ssh-keygen -t rsa -C "注册邮箱"  //创建本地密文<br>
+6. 去对应的目录找密文文件<br>
+7. rsa.pub 复制密文，粘贴 setting->SSH key and GPG-> new ssh key ->粘贴<br>
+8. ssh -T git@github.com  //测试关联是否成功<br>
+
+### 2.为目标仓库起别名，定位目标仓库，后续上传
+git remote add origin "ssh地址" //为ssh仓库地址创建别名为origin<br>
+git remote remove origin //删除origin别名<br>
+git remote add origin "ssh地址" //为ssh仓库地址创建别名为origin<br>
+
+## 本地设备与云端仓库的交互逻辑
+本地文件通过git add 命令进入git缓冲区，再通过git commit "提交说明"到达本地仓库，再通过git push origin master命令到达云端仓库。<br>
+*如果上传的本地分支与云端默认分支一致，则合并分支,不一致则创建新分支*<br>
+git add //添加内容<br>
+git rm  //删除本地文件并删除仓库数据<br>
+git restore  //回复被删除的内容，前提是仓库没有被删除<br>
+## 代码更新的依赖关系被破坏
+本地内容要比云端新，完成更新替换，但是如果直接修改云端内容，导致本地内容无法再次提交<br>
+解决方法：先拉取 git pull 云端内容，与本地内容合并或操作，而后再次pull<br>
+git pull --rebase origin master<br>
+git rebase --skip //忽略本地内容，保留云端内容<br>
+git rebase --abort<br>
+git rebase --continue <br>
+## 下载开源代码
+git clone "https仓库地址"  //下载开源项目的code资源
+
+设置行号： :set nu
+
+
+
 
