@@ -57,4 +57,25 @@ Markdown ,文本修饰语言，用特殊符号修饰正文效果<br>
 雷神|浮生一梦|1
 凌华|神里流霜灭|2
 
+### 代码片段
+```c
+      #include<stdio.h>
+      int main{
+      printf("hh\n");
+      return 0;
+      }
+```
+```cpp
+        #incldue<iostream>
+```
 
+```python
+         import <os>
+```
+
+```bash
+        echo "测试"
+	pwd
+	ps aux
+	ls -l
+```
