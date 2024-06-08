@@ -25,5 +25,12 @@
 本地的是新版，发布的是旧的版本
 ## 设备认证
 ### 1.如何让网站的账户也设备进行绑定，后续完成代码的管理以及上传下载
-
+git init    //创建本地仓库<br>
+git config --list   //查看git的配置文件<br>
+git config --global user.email "邮箱"<br>
+git config --global user.name "用户名"<br>
+ssh-keygen -t rsa -C "注册邮箱"  //创建本地密文<br>
+去对应的目录找密文文件
+rsa.pub 复制密文，粘贴 setting->SSH key and GPG-> new ssh key ->粘贴<br>
+ssh -T git@github.com  //测试关联是否成功<br>
 
